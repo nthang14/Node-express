@@ -5,11 +5,14 @@ const cors = require("cors");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 dotenv.config();
+
 const test = require("./routes/test");
 
 const app = express();
 const port = process.env.PORT || 8000;
 const host_name = process.env.HOST_NAME || "localhost";
+
+// connect database
 
 // config static file
 app.use("/static", express.static(path.join(__dirname, "public")));
